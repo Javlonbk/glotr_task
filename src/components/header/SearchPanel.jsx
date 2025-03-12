@@ -13,6 +13,7 @@ const StyledSearchPanel = styled.div`
         height: 100%;
         padding: 8px 15px;
         box-sizing: border-box;
+        border: 1px solid #e8ebec;
         border-radius: 5px;
         top: 0px;
         left: 0px;

@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-const ProductCard = styled.div`
+const ProductCard = styled(Link)`
     width: 100%;
     max-width: 240px;
     border-radius: 8px;
@@ -11,6 +12,9 @@ const ProductCard = styled.div`
     flex-direction: column;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 `
 
 const ProductImage = styled.img`
@@ -20,7 +24,7 @@ const ProductImage = styled.img`
     object-fit: contain;
 `
 
-const ProductName = styled.a`
+const ProductName = styled(Link)`
     font-weight: 500;
     font-size: 14px;
     color: #2f2f2f;
@@ -47,12 +51,15 @@ const Price = styled.div`
         font-size: 16px;
     }
 `
+const ReadMore = styled.div`
+    
+`
 
 const SellerInfo = styled.div`
     margin-top: 10px;
 `
 
-const SellerName = styled.a`
+const SellerName = styled(Link)`
     font-weight: 500;
     font-size: 14px;
     color: #2f2f2f;
@@ -67,16 +74,17 @@ const Location = styled.span`
     margin-top: 6px;
 `
 
-const ProductItem = ({product}) => {
-    const {imgUrl, name, exist, price, seller, location} = product;
+const ProductItem = ({ product }) => {
+    const { id, imgUrl, name, exist, price, seller, location } = product;
+
     return (
-        <ProductCard>
-            <ProductImage src={imgUrl} alt="Laptop" />
-            <ProductName href="#">{name}</ProductName>
+        <ProductCard to={`/products/${id}`}>
+            <ProductImage src={imgUrl} alt={name} />
+            <ProductName to={`/products/${id}`}>{name}</ProductName>
             <Availability>{exist}</Availability>
-            <Price>{price}<span>so'm</span></Price>
+            <Price>{price}<span> so'm</span></Price>
             <SellerInfo>
-                <SellerName href="#">{seller}</SellerName>
+                <SellerName to={`/seller/${seller}`}>{seller}</SellerName>
                 <Location>{location}</Location>
             </SellerInfo>
         </ProductCard>
