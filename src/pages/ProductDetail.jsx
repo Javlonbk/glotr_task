@@ -10,6 +10,7 @@ import PaymentMethods from '../components/product-details/PaymentMethods';
 import ProductInfo from '../components/product-details/ProductInfo';
 import ProductSpecifications from '../components/product-details/ProductSpecifications';
 import Seller from '../components/product-details/Seller';
+import ConfirmOrderModal from '../components/order/Order';
 
 const ProductDetailWrapper = styled.div`
   display: grid;
@@ -102,7 +103,7 @@ const ProductDetail = () => {
                 <DeliverMethods />
             </FullWidthSection>
 
-            
+
         </ProductDetailWrapper>
     );
 };

@@ -4,6 +4,7 @@ import { FaBars } from 'react-icons/fa';
 import SearchPanel from './SearchPanel';
 import AccountActions from './AccountActions';
 import logoIcon from '../../assets/svg/g-logo.svg'
+import { Link } from 'react-router';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -19,7 +20,7 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -50,7 +51,7 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <Logo>
+      <Logo to={'/'}>
         <FaBars className="menu-icon" onClick={() => setMenuOpen(!menuOpen)} />
         <img src={logoIcon} alt="Logo" />
       </Logo>
