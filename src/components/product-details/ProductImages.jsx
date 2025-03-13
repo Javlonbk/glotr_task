@@ -87,7 +87,6 @@ const ResponsiveImage = styled.div`
   box-sizing: border-box;
   div{
     width: 100%;
-    border: 1px solid red;
     background-color: #fff;
     display: flex;
     align-items: center;
