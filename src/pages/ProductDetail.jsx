@@ -77,6 +77,7 @@ const ProductDetail = () => {
             {/* Right: Product Info */}
             <ProductInfoWrapper>
                 <ProductInfo product={product} />
+                <Seller />
             </ProductInfoWrapper>
 
             {/* Full Width Sections */}
@@ -101,9 +102,7 @@ const ProductDetail = () => {
                 <DeliverMethods />
             </FullWidthSection>
 
-            <FullWidthSection>
-                <Seller />
-            </FullWidthSection>
+            
         </ProductDetailWrapper>
     );
 };

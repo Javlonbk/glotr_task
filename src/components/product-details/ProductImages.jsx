@@ -38,13 +38,18 @@ const SmallImage = styled.img`
 const BigImageWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
+  max-width: 600px;
+  max-height: 480px;
   border: 1px solid #e8ebec;
   overflow: hidden;
   padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const BigImage = styled.img`
-  width: 100%;
+  width: 80%;
   height: auto;
   max-width: 100%;
   object-fit: contain;

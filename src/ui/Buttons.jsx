@@ -10,7 +10,8 @@ export const ButtonContainer = styled.div`
 export const Button = styled.button`
   border-radius: 8px;
   border: none;
-  padding: 8px 16px;
+  padding: 15px 16px !important; 
+  text-align: center;
   background-color: ${({ darker }) => (darker ? '#F24236' : '#f7a19b')};
   color: ${({ darker }) => (darker ? '#fff' : '#F24236')};
   cursor: pointer;

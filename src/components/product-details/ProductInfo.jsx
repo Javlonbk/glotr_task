@@ -4,11 +4,15 @@ import { ButtonContainer, Button } from '../../ui/Buttons';
 import messageIcon from '../../assets/png/message.png';
 
 const ProductDetails = styled.div`
-  flex: 1;
   max-width: 400px;
   background-color: #fff;
   border: 1px solid #e8ebec;
   padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  height: fit-content; 
   border-radius: 8px;
 `;
 
