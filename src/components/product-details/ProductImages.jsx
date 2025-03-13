@@ -78,20 +78,28 @@ const CarouselWrapper = styled.div`
   }
 `;
 
-
 const ResponsiveImage = styled.div`
   width: 100%;
   max-width: 100%; 
   height: auto;
-  padding: 16px;
+  padding:30px  20px;
+  padding-bottom: 0px;
   box-sizing: border-box;
-  
-  img {
+  div{
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+    border: 1px solid red;
     background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+    img {
+      width: 80%;
+      max-width: 70%;
+      height: auto;
+      border-radius: 8px;
+    }
   }
 `;
 
@@ -99,8 +107,10 @@ const ResponsiveImage = styled.div`
 const ProductImages = ({ images, selectedImage, setSelectedImage }) => {
   const carouselItems = images.map((img, index) => (
     <ResponsiveImage key={index}>
-      <img src={img}
-        alt="Product" />
+      <div>
+        <img src={img}
+          alt="Product" />
+      </div>
     </ResponsiveImage>
   ));
 
@@ -125,7 +135,7 @@ const ProductImages = ({ images, selectedImage, setSelectedImage }) => {
             mouseTracking
             items={carouselItems}
             infinite={true}
-            autoPlay={true}
+            autoPlay={false}
             disableButtonsControls={true} // Try removing centerMode
           />
         </div>

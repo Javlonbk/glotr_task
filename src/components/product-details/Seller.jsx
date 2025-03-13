@@ -5,7 +5,7 @@ import companyIcon from "../../assets/png/Amazon.png";
 import { Button, ButtonContainer } from "../../ui/Buttons";
 
 const SellerContainer = styled.div`
-  max-width: 400px;
+  max-width: 450px;
   background-color: #fff;
   border: 1px solid #e8ebec;
   padding: 15px;

@@ -10,18 +10,19 @@ import PaymentMethods from '../components/product-details/PaymentMethods';
 import ProductInfo from '../components/product-details/ProductInfo';
 import ProductSpecifications from '../components/product-details/ProductSpecifications';
 import Seller from '../components/product-details/Seller';
-import ConfirmOrderModal from '../components/order/Order';
 
 const ProductDetailWrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
-  margin-top: 40px;
+  width: 100%;
   padding: 20px;
-  box-sizing: border-box;
-  background-color: #fcfcfc;
+  box-sizing: border-box !important;
+  background-color: transparent;
+
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
+    padding: 20px 0px;
   }
 `;
 
@@ -37,7 +38,8 @@ const ProductInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-`;
+  /* align-items: center; */
+  `;
 
 const FullWidthSection = styled.div`
   grid-column: 1 / -1;
@@ -69,42 +71,45 @@ const ProductDetail = () => {
     }
 
     return (
-        <ProductDetailWrapper>
-            {/* Left: Product Images */}
-            <ProductImagesWrapper>
-                <ProductImages images={product.images} selectedImage={selectedImage} setSelectedImage={setSelectedImage} />
-            </ProductImagesWrapper>
+        <div style={{backgroundColor: "#fcfcfc"}}>
+            <ProductDetailWrapper>
+                {/* Left: Product Images */}
+                <ProductImagesWrapper>
+                    <ProductImages images={product.images} selectedImage={selectedImage} setSelectedImage={setSelectedImage} />
+                </ProductImagesWrapper>
 
-            {/* Right: Product Info */}
-            <ProductInfoWrapper>
-                <ProductInfo product={product} />
-                <Seller />
-            </ProductInfoWrapper>
+                {/* Right: Product Info */}
+                <ProductInfoWrapper>
+                    <ProductInfo product={product} />
+                    <Seller />
+                </ProductInfoWrapper>
 
-            {/* Full Width Sections */}
-            {product.read_more && (
+                {/* Full Width Sections */}
+
+                {product.read_more && (
+                    <FullWidthSection>
+                        <ProductDescription>
+                            <Paragraph>Описание</Paragraph>
+                            <ShowMore>{product.read_more}</ShowMore>
+                        </ProductDescription>
+                    </FullWidthSection>
+                )}
+
                 <FullWidthSection>
-                    <ProductDescription>
-                        <Paragraph>Описание</Paragraph>
-                        <ShowMore>{product.read_more}</ShowMore>
-                    </ProductDescription>
+                    <ProductSpecifications />
                 </FullWidthSection>
-            )}
 
-            <FullWidthSection>
-                <ProductSpecifications />
-            </FullWidthSection>
+                <FullWidthSection>
+                    <PaymentMethods />
+                </FullWidthSection>
 
-            <FullWidthSection>
-                <PaymentMethods />
-            </FullWidthSection>
-
-            <FullWidthSection>
-                <DeliverMethods />
-            </FullWidthSection>
+                <FullWidthSection>
+                    <DeliverMethods />
+                </FullWidthSection>
 
 
-        </ProductDetailWrapper>
+            </ProductDetailWrapper>
+        </div>
     );
 };
 

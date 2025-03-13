@@ -1,8 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-a{
+
+a {
     text-decoration: none;
     color: #000;
+}
+
+body {
+    overflow-x: hidden;
 }

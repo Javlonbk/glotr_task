@@ -4,7 +4,7 @@ import { ButtonContainer, Button } from '../../ui/Buttons';
 import messageIcon from '../../assets/png/message.png';
 
 const ProductDetails = styled.div`
-  max-width: 400px;
+  max-width: 450px;
   background-color: #fff;
   border: 1px solid #e8ebec;
   padding: 15px;
