@@ -135,7 +135,7 @@ const ProductImages = ({ images, selectedImage, setSelectedImage }) => {
             mouseTracking
             items={carouselItems}
             infinite={true}
-            autoPlay={false}
+            autoPlay={true}
             disableButtonsControls={true} // Try removing centerMode
           />
         </div>
