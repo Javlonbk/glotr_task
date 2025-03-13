@@ -21,6 +21,9 @@ const StyledBanner = styled.div`
 const StyledBannerLeft = styled.div`
     width: 74%;
     height: 100%;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `
 const StyledBannerCard = styled.a`
     width: 100%;
@@ -28,6 +31,11 @@ const StyledBannerCard = styled.a`
 `
 const StyledBannerRight = styled.a`
     width: 24%;
+    @media (max-width: 768px) {
+        img{
+            display: none;
+        }
+    }
 `
 
 const Banner = () => {
