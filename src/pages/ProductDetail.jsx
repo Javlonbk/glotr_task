@@ -17,6 +17,7 @@ const ProductDetailWrapper = styled.div`
   gap: 20px;
   margin-top: 40px;
   padding: 20px;
+  box-sizing: border-box;
   background-color: #fcfcfc;
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
@@ -24,10 +25,9 @@ const ProductDetailWrapper = styled.div`
 `;
 
 const ProductImagesWrapper = styled.div`
-  flex: 2;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   align-items: center;
 `;
 
