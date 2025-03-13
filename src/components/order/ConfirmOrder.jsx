@@ -6,11 +6,9 @@ const ConfirmOrder = ({ setIsConfirmed }) => {
 
   return (
     <>
-      <ConfirmContainer.Title>Подтвердите заказ</ConfirmContainer.Title>
       <ConfirmContainer.Description>
         Для подтверждения заказа мы вам отправили код на ваш номер
-        <br />
-        <ConfirmContainer.PhoneNumber>+998 90 909 90 90</ConfirmContainer.PhoneNumber>
+        <ConfirmContainer.PhoneNumber> +998 90 909 90 90</ConfirmContainer.PhoneNumber>
       </ConfirmContainer.Description>
       <ConfirmContainer.Input
         type="text"

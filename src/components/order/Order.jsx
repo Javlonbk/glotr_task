@@ -4,27 +4,33 @@ import ConfirmOrder from "./ConfirmOrder";
 import ReadyOrder from "./ReadyOrder";
 
 const Order = ({ showModal, setShowModal }) => {
-  const [isConfirmed, setIsConfirmed] = useState(false);
+    const [isConfirmed, setIsConfirmed] = useState(false);
 
-  return (
-    <>
-      <ConfirmContainer.ModalOverlay
-        show={showModal}
-        onClick={() => setShowModal(false)}
-      />
-      <ConfirmContainer.ModalContent show={showModal}>
-        <ConfirmContainer.CloseButton onClick={() => setShowModal(false)}>
-          ✖
-        </ConfirmContainer.CloseButton>
+    return (
+        <>
+            <ConfirmContainer.ModalOverlay
+                show={showModal}
+                onClick={() => setShowModal(false)}
+            />
+            <ConfirmContainer.ModalContent show={showModal}>
+                <ConfirmContainer.Header>
+                    <ConfirmContainer.Title>Подтвердите заказ</ConfirmContainer.Title>
 
-        {isConfirmed ? (
-          <ReadyOrder />
-        ) : (
-          <ConfirmOrder setIsConfirmed={setIsConfirmed} />
-        )}
-      </ConfirmContainer.ModalContent>
-    </>
-  );
+                    <ConfirmContainer.CloseButton onClick={() => setShowModal(false)}>
+                        ✖
+                    </ConfirmContainer.CloseButton>
+                </ConfirmContainer.Header>
+
+
+
+                {isConfirmed ? (
+                    <ReadyOrder />
+                ) : (
+                    <ConfirmOrder setIsConfirmed={setIsConfirmed} />
+                )}
+            </ConfirmContainer.ModalContent>
+        </>
+    );
 };
 
 export default Order;
